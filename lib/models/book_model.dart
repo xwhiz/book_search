@@ -21,10 +21,11 @@ class BookModel {
     String coverUrl =
         "https://covers.openlibrary.org/b/id/${json['cover_i'] as int}-L.jpg";
     String openLibUrl = "https://openlibrary.org${json['key'] as String}";
+    List<String> authors = List<String>.from(json['author_name']);
 
     return BookModel(
       title: json['title'] as String,
-      authorNames: json['author_name'] as List<String>,
+      authorNames: authors,
       ebookAccess: json['ebook_access'] as String,
       coverUrl: coverUrl,
       editionCount: json['edition_count'] as int,

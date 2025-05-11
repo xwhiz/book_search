@@ -12,6 +12,7 @@ class MainViewModel extends ChangeNotifier {
   get books => _books;
 
   Future<void> setup() async {
+    _books = null;
     _books = await _webService.fetchTrendingBooks();
     notifyListeners();
   }

@@ -18,9 +18,21 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var vm = Provider.of<MainViewModel>(context);
+
     return Scaffold(
       appBar: AppBar(title: Text("Books"), centerTitle: true),
-      body: Center(child: Text("Hello")),
+      body:
+          vm.books == null
+              ? Center(
+                child: Column(
+                  spacing: 8,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [CircularProgressIndicator(), Text("Loading...")],
+                ),
+              )
+              : Center(child: Text("HEHE")),
     );
   }
 }
