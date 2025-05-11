@@ -1,4 +1,6 @@
+import 'package:book_search/view_models/main_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'pages/home_page.dart';
 
@@ -14,7 +16,10 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.brown),
-      home: HomePage(),
+      home: ChangeNotifierProvider(
+        create: (context) => MainViewModel(),
+        child: HomePage(),
+      ),
     );
   }
 }
