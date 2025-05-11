@@ -19,8 +19,8 @@ class BookModel {
 
   factory BookModel.fromJson(Map<String, dynamic> json) {
     String coverUrl =
-        "https://covers.openlibrary.org/b/id/${json['cover_i'] as int}-L.jpg";
-    String openLibUrl = "https://openlibrary.org${json['key'] as String}";
+        "https://covers.openlibrary.org/b/id/${json['cover_i']}-M.jpg";
+    String openLibUrl = "https://openlibrary.org${json['key']}";
     List<String> authors = List<String>.from(json['author_name']);
 
     return BookModel(
