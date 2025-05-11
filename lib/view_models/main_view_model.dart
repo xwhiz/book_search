@@ -5,9 +5,11 @@ import 'package:flutter/material.dart';
 class MainViewModel extends ChangeNotifier {
   List<BookModel>? _books;
 
-  WebService _webService = WebService();
+  final WebService _webService = WebService();
 
   MainViewModel();
+
+  get books => _books;
 
   Future<void> setup() async {
     _books = await _webService.fetchTrendingBooks();
